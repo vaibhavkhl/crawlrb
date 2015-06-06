@@ -1,6 +1,9 @@
-require 'open-uri'
-require 'open_uri_redirections'
+require 'mechanize'
 
-open('http://python.org', :allow_redirections => :safe) {|f|
-  f.each_line {|line| p line}
-}
+agent = Mechanize.new
+
+page = agent.get('http://python.org')
+
+page.links.each do |link|
+  puts link.uri()
+end
