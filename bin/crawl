@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+$LOAD_PATH << File.expand_path("#{File.dirname(__FILE__)}/../lib")
+require 'crawl.rb'
+
+base_url = ARGV[0]
+raise 'missing url' unless base_url
+
+max_links = ARGV[1]
+
+Crawl.crawl_links(base_url, max_links)
