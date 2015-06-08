@@ -42,6 +42,8 @@ class LinkCrawler
 
         rescue
           next
+        rescue Interrupt
+          break
         end
 
       end
@@ -53,8 +55,7 @@ class LinkCrawler
   end
 
   def max_crawl?
-    return true unless max_links
-    return true if links_visited.count < max_links
+    return true if (links_visited.count < max_links || max_links == 0)
     puts "max limit of #{max_links} reached, stopping..."
     links_to_crawl.clear
     false
