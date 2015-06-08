@@ -12,7 +12,7 @@ bundle
 ```
 
 #### How to use
-Run ```bin/crawl https://github.com 5``` cmd from crawldb dir.
+Run ```bin/crawl https://github.com(any url) 5``` cmd from crawldb dir.
 
 - last argument is optional which specifies the max no. of urls to visit to fetch links.
 - once execution finishes or user stops it using ```ctrl + c```, script exports all the links fetched to links.txt file.
